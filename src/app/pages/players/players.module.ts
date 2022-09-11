@@ -6,6 +6,7 @@ import { PlayersComponent } from './players.component';
 import { AddNewPlayerComponent } from './add-new-player/add-new-player.component';
 import { DetailsComponent } from './details/details.component';
 import { PlayerListComponent } from './player-list/player-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,6 @@ import { PlayerListComponent } from './player-list/player-list.component';
     DetailsComponent,
     PlayerListComponent,
   ],
-  imports: [CommonModule, PlayersRoutingModule],
+  imports: [CommonModule, PlayersRoutingModule, ReactiveFormsModule],
 })
 export class PlayersModule {}

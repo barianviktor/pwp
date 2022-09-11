@@ -9,11 +9,14 @@ import { PlayersService } from 'src/app/services/players.service';
   styleUrls: ['./player-list.component.scss'],
 })
 export class PlayerListComponent implements OnInit {
-  players: IPlayer[] = [];
+  //players: IPlayer[] = [];
   players$: Observable<IPlayer[]>;
   constructor(private playersService: PlayersService) {
-    this.players$ = playersService.getPlayers();
+    this.players$ = playersService.players$;
   }
 
   ngOnInit(): void {}
+  deletePlayer(id: number) {
+    this.playersService.deletePlayer(id);
+  }
 }

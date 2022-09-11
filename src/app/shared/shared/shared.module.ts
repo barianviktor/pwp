@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WageInfoComponent } from '../wage-info/wage-info.component';
 
 @NgModule({
-  declarations: [WageInfoComponent],
+  declarations: [],
   imports: [CommonModule],
-  exports: [WageInfoComponent, CommonModule],
+  exports: [CommonModule],
 })
 export class SharedModule {}

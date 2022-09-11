@@ -7,25 +7,20 @@ import { HomeComponent } from './pages/home/home.component';
 import { PlayersComponent } from './pages/players/players.component';
 import { WagesComponent } from './pages/wages/wages.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { StatisticsBoxComponent } from './components/statistics-box/statistics-box.component';
-import { WageInfoComponent } from './shared/wage-info/wage-info.component';
 import { SharedModule } from './shared/shared/shared.module';
 import { PlayersModule } from './pages/players/players.module';
 import { WagesModule } from './pages/wages/wages.module';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    NavigationComponent,
-    StatisticsBoxComponent,
-  ],
+  declarations: [AppComponent, NavigationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     PlayersModule,
     WagesModule,
+    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

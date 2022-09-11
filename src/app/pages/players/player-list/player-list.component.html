@@ -1,19 +1,40 @@
 <h1>Player list</h1>
 <a routerLink="new">new player</a>
-<div>
-  <div class="player-item" *ngFor="let player of players$ | async">
-    <div>
-      {{ player.id }}
-    </div>
-    <div>
-      {{ player.name }}
-    </div>
-    <div></div>
-    <div>
-      {{ player.wage }}
-    </div>
-    <div>
-      <a [routerLink]="[player.id]">details</a>
-    </div>
-  </div>
-</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Shirt number</th>
+      <th scope="col">Team</th>
+      <th scope="col">Age</th>
+      <th scope="col">Wage</th>
+      <th scope="col">End of contract date</th>
+      <th scope="col">Action icons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let player of players$ | async">
+      <!-- <th scope="row">1</th> -->
+      <td>{{ player.name }}</td>
+      <td>{{ player.shirtNumber }}</td>
+      <td>{{ player.team }}</td>
+      <td>{{ player.age }}</td>
+      <td>{{ player.wage }}</td>
+      <td>{{ player.endOfContract | date: "yyyy-MM-dd" }}</td>
+      <td>
+        <div>
+          <a [routerLink]="[player.id]">
+            <button class="btn btn-secondary m-1 btn-sm">Details</button>
+          </a>
+          <button
+            (click)="deletePlayer(player.id)"
+            class="btn btn-danger btn-sm"
+          >
+            Delete
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
