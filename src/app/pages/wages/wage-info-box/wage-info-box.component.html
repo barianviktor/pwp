@@ -1,0 +1,39 @@
+<div class="box p-3">
+  <h1>Wage info box</h1>
+  <div>
+    <p>
+      Current Money <strong>{{ currentMoney$ | async }}</strong>
+    </p>
+    <p>
+      Current Monthly Income
+      <strong>{{ currentMonthlyIncome$ | async }}</strong>
+    </p>
+    <p>
+      players wage <strong>{{ playersSumWage | async }}</strong>
+    </p>
+  </div>
+  <div>
+    <p>
+      Expected Money at the end of the next month :
+      <strong>{{
+        (currentMoney$ | async)! +
+          (currentMonthlyIncome$ | async)! -
+          (playersSumWage | async)!
+      }}</strong>
+    </p>
+  </div>
+  <div>
+    <p>
+      Club Financial stability:
+      <strong>
+        {{
+          calculateStability(
+            playersSumWage | async,
+            currentMonthlyIncome$ | async,
+            currentMoney$ | async
+          )
+        }}
+      </strong>
+    </p>
+  </div>
+</div>

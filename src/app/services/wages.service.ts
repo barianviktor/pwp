@@ -10,7 +10,13 @@ export class WagesService {
     0
   );
   constructor() {
-    this.currentMoney$.next(4900);
-    this.currentMonthlyIncome$.next(1200);
+    this.currentMoney$.next(225000);
+    this.currentMonthlyIncome$.next(90000);
+  }
+  setCurrentMoney(value: number) {
+    this.currentMoney$.next(value);
+  }
+  setCurrentMonthlyIncome(value: number) {
+    this.currentMonthlyIncome$.next(value);
   }
 }

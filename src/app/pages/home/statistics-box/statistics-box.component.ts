@@ -11,7 +11,7 @@ export class StatisticsBoxComponent implements OnInit {
   wageOfPlayers: number = 0;
 
   constructor(private playerService: PlayersService) {
-    playerService.players$.subscribe((x) => {
+    playerService.getPlayers().subscribe((x) => {
       console.log(x);
       this.numberOfPlayers = x.length;
       let wageSum = 0;

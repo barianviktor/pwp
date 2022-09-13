@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Observer } from 'rxjs';
 import { IPlayer } from 'src/app/interfaces/IPlayer';
 import { PlayersService } from 'src/app/services/players.service';
@@ -14,13 +14,17 @@ export class DetailsComponent implements OnInit {
   player$?: Observable<IPlayer>;
 
   constructor(
-    private route: ActivatedRoute,
+    public route: ActivatedRoute,
+    public router: Router,
     private playerService: PlayersService
   ) {
     this.route.params.subscribe((params) => {
-      console.log(params['id']);
       this.player$ = playerService.getPlayer(params['id']);
     });
+  }
+  onDeletePlayer() {
+    this.playerService.deletePlayer(this.route.snapshot.params['id']);
+    this.router.navigate(['/players']);
   }
 
   ngOnInit(): void {}

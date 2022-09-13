@@ -1,5 +1,5 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { INewPlayerForm } from './new-player-form.interface';
+import { INewPlayerForm } from '../../interfaces/new-player-form.interface';
 
 export class NewPlayerForm extends FormGroup<INewPlayerForm> {
   constructor() {

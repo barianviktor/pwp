@@ -1,0 +1,21 @@
+<form [formGroup]="inputForm">
+  <h1>Wage module page</h1>
+  <div class="input-box">
+    <label>Current Money</label>
+    <input
+      (input)="changeCurrentMoney()"
+      type="number"
+      formControlName="currentMoney"
+      class="form-control"
+    />
+  </div>
+  <div class="input-box">
+    <label>Current Monthly Income</label>
+    <input
+      class="form-control"
+      (input)="changeCurrentMonthlyIncome()"
+      type="number"
+      formControlName="currentMonthlyIncome"
+    />
+  </div>
+</form>

@@ -12,7 +12,7 @@ export class PlayerListComponent implements OnInit {
   //players: IPlayer[] = [];
   players$: Observable<IPlayer[]>;
   constructor(private playersService: PlayersService) {
-    this.players$ = playersService.players$;
+    this.players$ = playersService.getPlayers();
   }
 
   ngOnInit(): void {}

@@ -3,8 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IPlayer } from 'src/app/interfaces/IPlayer';
 import { PlayersService } from 'src/app/services/players.service';
-import { NewPlayerForm } from './new-player-form';
-import { INewPlayerForm } from './new-player-form.interface';
+import { NewPlayerForm } from '../new-player-form';
+import { INewPlayerForm } from '../../../interfaces/new-player-form.interface';
 
 @Component({
   selector: 'app-add-new-player',
@@ -13,9 +13,7 @@ import { INewPlayerForm } from './new-player-form.interface';
 })
 export class AddNewPlayerComponent implements OnInit {
   npForm: FormGroup<INewPlayerForm> = new NewPlayerForm();
-  constructor(private playerService: PlayersService, private router: Router) {
-    console.log(this.npForm.controls);
-  }
+  constructor(private playerService: PlayersService, private router: Router) {}
   get name(): FormControl {
     return this.npForm.get('name') as FormControl;
   }

@@ -2,10 +2,19 @@ import { NgModule } from '@angular/core';
 
 import { WagesRoutingModule } from './wages-routing.module';
 import { WagesComponent } from './wages.component';
-import { SharedModule } from 'src/app/shared/shared/shared.module';
+import { WageInfoBoxComponent } from './wage-info-box/wage-info-box.component';
+import { TeamsComponent } from './teams/teams.component';
+import { InputsComponent } from './inputs/inputs.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [WagesComponent],
-  imports: [WagesRoutingModule, SharedModule],
+  declarations: [
+    WagesComponent,
+    WageInfoBoxComponent,
+    TeamsComponent,
+    InputsComponent,
+  ],
+  imports: [WagesRoutingModule, CommonModule, ReactiveFormsModule],
 })
 export class WagesModule {}

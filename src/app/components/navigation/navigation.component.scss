@@ -1,0 +1,83 @@
+
+/* @import "../../variables";
+ */
+ nav{
+    position: fixed;
+    top: 0;
+    width: 350px;
+
+    height: 100%;
+    display: inline-block;
+    transition: all 0.1s ease-in;
+}
+.is-open{
+    left: 0;
+
+}
+.is-closed{
+    left: -350px;
+}
+.nav-container{
+   position: relative;
+    width: 100%;
+    height: 100%;
+ /*    background-color: $filler-color; */
+    box-shadow:      2px 2px 5px rgba(82,82,82,0.64);
+    
+
+}
+.nav-close-cont {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px ;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 25px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.nav-close-cont :hover{
+    color: white;
+}
+.nav-close-cont{
+    fill: white;
+    
+}
+.nav-open-cont{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 15px;
+    margin: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+
+}
+.logo-container{
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 600;
+    padding: 5vh 0;
+    box-sizing: content-box;
+}
+.logo-container a {
+    color: white;
+
+}
+.nav-items{
+    
+    padding: 25px;
+    width: 100%;
+    height:fit-content;
+}
+.nav-items * {
+    margin: 20px 0;
+    display: block;
+    width: 100%;
+}
+.nav-items a {
+    text-decoration: none;
+}

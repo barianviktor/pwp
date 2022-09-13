@@ -1,2 +1,32 @@
-<p>details works!</p>
-<p>{{ (player$ | async)?.name }}</p>
+<div class="header">
+  <h1>{{ (player$ | async)?.name }} Detail Page</h1>
+  <div>
+    <a class="m-2" [routerLink]="['edit']">
+      <button class="btn btn-sm btn-secondary">Edit Player</button>
+    </a>
+    <button (click)="onDeletePlayer()" class="m-2 btn btn-sm btn-danger">
+      Delete
+    </button>
+  </div>
+</div>
+<div>
+  <p>
+    Name: <strong>{{ (player$ | async)?.name }}</strong>
+  </p>
+  <p>
+    Shirt Number: <strong>{{ (player$ | async)?.shirtNumber }}</strong>
+  </p>
+  <p>
+    Team: <strong>{{ (player$ | async)?.team }}</strong>
+  </p>
+  <p>
+    Age: <strong>{{ (player$ | async)?.age }}</strong>
+  </p>
+  <p>
+    Wage: <strong>{{ (player$ | async)?.wage }}</strong>
+  </p>
+  <p>
+    End of Contract:
+    <strong>{{ (player$ | async)?.endOfContract | date: "yyyy-MM-dd" }}</strong>
+  </p>
+</div>

@@ -7,7 +7,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { PlayersComponent } from './pages/players/players.component';
 import { WagesComponent } from './pages/wages/wages.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { SharedModule } from './shared/shared/shared.module';
 import { PlayersModule } from './pages/players/players.module';
 import { WagesModule } from './pages/wages/wages.module';
 import { HomeModule } from './pages/home/home.module';
@@ -17,7 +16,6 @@ import { HomeModule } from './pages/home/home.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     PlayersModule,
     WagesModule,
     HomeModule,

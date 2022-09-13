@@ -7,6 +7,7 @@ import { AddNewPlayerComponent } from './add-new-player/add-new-player.component
 import { DetailsComponent } from './details/details.component';
 import { PlayerListComponent } from './player-list/player-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddNewPlayerComponent,
     DetailsComponent,
     PlayerListComponent,
+    EditComponent,
   ],
   imports: [CommonModule, PlayersRoutingModule, ReactiveFormsModule],
 })

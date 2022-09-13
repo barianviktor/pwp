@@ -1,4 +1,9 @@
-<p>wage-info works!</p>
-<p>most expensive player</p>
-<p>{{ (mep$ | async)?.name }}</p>
-<p>{{ (mep$ | async)?.wage }}</p>
+<div class="p-2 box">
+  <h2>Wage info</h2>
+  <p>
+    Highest payed player: <strong>{{ (mep$ | async)?.name }}</strong>
+  </p>
+  <p>
+    Highest payed player: <strong>{{ (mep$ | async)?.wage }}</strong>
+  </p>
+</div>

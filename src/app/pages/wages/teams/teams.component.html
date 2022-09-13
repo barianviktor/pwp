@@ -1,0 +1,43 @@
+<div *ngFor="let team of teams$ | async">
+  <h2>{{ team.teamName }}</h2>
+  <p>
+    Team full wage: <strong>{{ team.wage }}</strong>
+  </p>
+  <div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Shirt number</th>
+          <th scope="col">Age</th>
+          <th scope="col">Wage</th>
+          <th scope="col">End of contract date</th>
+          <th scope="col">Action icons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of team.players">
+          <!-- <th scope="row">1</th> -->
+          <td>{{ player.name }}</td>
+          <td>{{ player.shirtNumber }}</td>
+          <td>{{ player.age }}</td>
+          <td>{{ player.wage }}</td>
+          <td>{{ player.endOfContract | date: "yyyy-MM-dd" }}</td>
+          <td>
+            <div>
+              <a [routerLink]="['/players', player.id]">
+                <button class="btn btn-secondary m-1 btn-sm">Details</button>
+              </a>
+              <button
+                (click)="deletePlayer(player.id)"
+                class="btn btn-danger btn-sm"
+              >
+                Delete
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
