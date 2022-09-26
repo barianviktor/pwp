@@ -23,7 +23,12 @@
     height: 100%;
  /*    background-color: $filler-color; */
     box-shadow:      2px 2px 5px rgba(82,82,82,0.64);
-    
+    background-color: #E20174;
+
+}
+
+.t-logo-cont img {
+    width: 100px;
 
 }
 .nav-close-cont {
@@ -69,15 +74,20 @@
 }
 .nav-items{
     
-    padding: 25px;
+    padding:80px 15px;
     width: 100%;
     height:fit-content;
 }
 .nav-items * {
-    margin: 20px 0;
-    display: block;
+    margin: 10px 0;
     width: 100%;
 }
 .nav-items a {
     text-decoration: none;
+}
+.t-logo-cont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
 }

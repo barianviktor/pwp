@@ -1,9 +1,12 @@
 <div class="p-2 box">
   <h2>Wage info</h2>
-  <p>
-    Highest payed player: <strong>{{ (mep$ | async)?.name }}</strong>
-  </p>
-  <p>
-    Highest payed player: <strong>{{ (mep$ | async)?.wage }}</strong>
-  </p>
+  <div *ngIf="mep$ | async as mep">
+    <p>
+      Highest payed player: <strong>{{ mep.name }}</strong>
+    </p>
+    <p>
+      Highest payed player: <strong>{{ mep.wage }}</strong>
+    </p>
+  </div>
+
 </div>

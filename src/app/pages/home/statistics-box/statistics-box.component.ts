@@ -10,9 +10,10 @@ export class StatisticsBoxComponent implements OnInit {
   numberOfPlayers: number = 0;
   wageOfPlayers: number = 0;
 
-  constructor(private playerService: PlayersService) {
-    playerService.getPlayers().subscribe((x) => {
-      console.log(x);
+  constructor(private playerService: PlayersService) {}
+
+  ngOnInit(): void {
+    this.playerService.getPlayers().subscribe((x) => {
       this.numberOfPlayers = x.length;
       let wageSum = 0;
       x.forEach((p) => {
@@ -21,6 +22,4 @@ export class StatisticsBoxComponent implements OnInit {
       this.wageOfPlayers = wageSum;
     });
   }
-
-  ngOnInit(): void {}
 }

@@ -1,20 +1,9 @@
 import { Injectable } from '@angular/core';
-import { IPlayer } from '../interfaces/IPlayer';
-import { PLAYERS } from 'src/mockData';
-import {
-  BehaviorSubject,
-  combineLatest,
-  filter,
-  from,
-  map,
-  Observable,
-  of,
-  switchMap,
-  tap,
-  toArray,
-} from 'rxjs';
-import { INewPlayerForm } from '../interfaces/new-player-form.interface';
 import { FormGroup } from '@angular/forms';
+import { BehaviorSubject, filter, from, map, Observable } from 'rxjs';
+import { PLAYERS } from 'src/mockData';
+import { IPlayer } from '../interfaces/IPlayer';
+import { INewPlayerForm } from '../interfaces/new-player-form.interface';
 import { TeamStat } from '../interfaces/TeamStat.interface';
 
 @Injectable({

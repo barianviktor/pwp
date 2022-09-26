@@ -9,10 +9,10 @@ import { TeamStat } from '../../../interfaces/TeamStat.interface';
   styleUrls: ['./teams.component.scss'],
 })
 export class TeamsComponent implements OnInit {
+  teams$: Observable<TeamStat[]>;
   constructor(private playersService: PlayersService) {
     this.teams$ = this.playersService.getTeamStatistics();
   }
-  teams$: Observable<TeamStat[]>;
   ngOnInit(): void {
     //this.teams = this.getTeamStatistics();
   }
