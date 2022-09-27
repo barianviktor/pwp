@@ -11,22 +11,22 @@ import { WagesService } from 'src/app/services/wages.service';
 export class WageInfoBoxComponent implements OnInit {
   currentMoney$: Observable<number>;
   currentMonthlyIncome$: Observable<number>;
-  playersSumWage: Observable<number>;
+  playersSumWage$: Observable<number>;
   constructor(
     private wageService: WagesService,
     private playersService: PlayersService
   ) {
     this.currentMoney$ = wageService.currentMoney$;
     this.currentMonthlyIncome$ = wageService.currentMonthlyIncome$;
-    this.playersSumWage = playersService.playersWage();
+    this.playersSumWage$ = playersService.playersWage();
   }
   ngOnInit(): void {}
   calculateStability(
-    playersWage: number | null,
-    currentMonthlyIncome: number | null,
-    currentMoney: number | null
+    playersWage: number,
+    currentMonthlyIncome: number,
+    currentMoney: number
   ) {
-    if (playersWage! < currentMonthlyIncome!) {
+    if (playersWage! <= currentMonthlyIncome!) {
       //tobb a bevetel mint a kiadas
       return 'The club is financial stable';
     } else {

@@ -9,31 +9,35 @@
       <strong>{{ currentMonthlyIncome$ | async }}</strong>
     </p>
     <p>
-      players wage <strong>{{ playersSumWage | async }}</strong>
+      players wage <strong>{{ playersSumWage$ | async }}</strong>
     </p>
   </div>
-  <div>
-    <p>
-      Expected Money at the end of the next month :
-      <strong>{{
-        (currentMoney$ | async)! +
-          (currentMonthlyIncome$ | async)! -
-          (playersSumWage | async)!
-      }}</strong>
-    </p>
-  </div>
-  <div>
-    <p>
-      Club Financial stability:
-      <strong>
-        {{
-          calculateStability(
-            playersSumWage | async,
-            currentMonthlyIncome$ | async,
-            currentMoney$ | async
-          )
-        }}
-      </strong>
-    </p>
-  </div>
+  <ng-container *ngIf="currentMoney$ | async as currentMoney">
+    <ng-container *ngIf="currentMonthlyIncome$ | async as currentMonthlyIncome">
+      <ng-container *ngIf="playersSumWage$ | async as playersSumWage">
+        <div>
+          <p>
+            Expected Money at the end of the next month :
+            <strong>
+              {{ currentMoney + currentMonthlyIncome - playersSumWage }}
+            </strong>
+          </p>
+        </div>
+        <div>
+          <p>
+            Club Financial stability:
+            <strong>
+              {{
+                calculateStability(
+                  playersSumWage,
+                  currentMonthlyIncome,
+                  currentMoney
+                )
+              }}
+            </strong>
+          </p>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-container>
 </div>
